@@ -13,20 +13,20 @@ data_list = []
 image_list = []
 
 for i in range(len(r_data)):
-    data_list.append((r_data[i]["id"],r_data[i]["current_price"],"{:,}".format(r_data[i]["market_cap"])))
+    data_list.append((r_data[i]["name"],r_data[i]["symbol"],r_data[i]["current_price"],"{:,}".format(r_data[i]["market_cap"])))
 
 
 for i in range(len(r_data)):
     image_list.append((r_data[i]["image"]))
 
-df = DataFrame (data_list,columns=['id','current price','market cap'])
+df = DataFrame (data_list,columns=['Name','Symbol','Current Price','Market Cap'])
 df['Images'] = image_list
 
 #function to convert links to tags
 def path_to_image_html(path):
     return '<img src="'+ path + '" width="60" >'
 
-#print (df)
+print (df)
 # Rendering the dataframe as HTML table
 df.to_html(escape=False, formatters=dict(Images=path_to_image_html))
 
