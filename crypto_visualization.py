@@ -23,10 +23,10 @@ for i in range(len(r_data)):
 
 # data_tuple = tuple(data_tuple)
 #image_list = tuple(image_list)
-print(image_list)
+#print(image_list)
 
 
-# df = DataFrame (data_tuple,columns=['id','current_price','image'])
-# print (df)
+df = DataFrame (data_list,columns=['id','current price','market cap'])
+print (df)
 
 # print(data_tuple)
