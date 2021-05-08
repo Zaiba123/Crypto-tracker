@@ -12,8 +12,8 @@ data_tuple = []
 
 for i in range(len(r_data)):
     data_tuple.append((r_data[i]["id"],r_data[i]["current_price"],r_data[i]["market_cap"]))
-data_tuple = tuple(data_tuple)
 
+data_tuple = tuple(data_tuple)
 
 df = DataFrame (data_tuple,columns=['id','current_price','market_cap'])
 print (df)
