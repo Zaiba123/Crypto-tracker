@@ -21,5 +21,16 @@ for i in range(len(r_data)):
 
 df = DataFrame (data_list,columns=['id','current price','market cap'])
 df['Images'] = image_list
-print (df)
 
+#function to convert links to tags
+def path_to_image_html(path):
+    return '<img src="'+ path + '" width="60" >'
+
+#print (df)
+# Rendering the dataframe as HTML table
+df.to_html(escape=False, formatters=dict(Images=path_to_image_html))
+
+# Rendering the images in the dataframe using the HTML method.
+HTML(df.to_html(escape=False,formatters=dict(Images=path_to_image_html)))
+# Saving the dataframe as a webpage
+df.to_html('webpage.html',escape=False, formatters=dict(Images=path_to_image_html))
