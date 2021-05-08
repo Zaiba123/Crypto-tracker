@@ -13,7 +13,7 @@ data_list = []
 image_list = []
 
 for i in range(len(r_data)):
-    data_list.append((r_data[i]["id"],r_data[i]["current_price"],r_data[i]["market_cap"]))
+    data_list.append((r_data[i]["id"],r_data[i]["current_price"],"{:,}".format(r_data[i]["market_cap"])))
 
 
 for i in range(len(r_data)):
